@@ -1,0 +1,27 @@
+.topbar {
+    background-color: black;
+    overflow: hidden;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 0.6;
+}
+
+.container {
+    display: inline-block;
+    cursor: pointer;
+}
+
+body 
+{
+margin: 0;
+}
+
+html, body, #map
+{
+height: 100%;
+}
+
+#map
+{
+width: 100%;
+}
