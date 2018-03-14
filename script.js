@@ -7,17 +7,6 @@ window.onload = function()
 	document.getElementsByTagName('head')[0].appendChild(script);
 }
 
-function openNav() {
-	document.getElementById("mySidenav").style.width = "250px";
-	document.getElementById("main").style.marginLeft = "250px";
-}
-
-/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
-function closeNav() {
-	document.getElementById("mySidenav").style.width = "0";
-	document.getElementById("main").style.marginLeft = "0";
-}
-
 function initMap(){
 	var locations = [
 		['Leiden', 52.1674, 4.4713, 4],
@@ -43,7 +32,7 @@ function initMap(){
 		};
 		
 		var windmolenLayer = new google.maps.KmlLayer({
-			url: "https://loeeess.github.io/ikgeo/windmolens.kml", 
+			url: "https://loeeess.github.io/ikgeo/data/windmolens.kml", 
 				map: map
 			});
 		
@@ -54,6 +43,8 @@ function initMap(){
 		  map: map,
 		  icon: image
 		});
+
+		setMarkers(image)
   
 		google.maps.event.addListener(marker, 'click', (function(marker, i) {
 		  return function() {

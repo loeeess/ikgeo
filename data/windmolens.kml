@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
+<Style id="My_Style">
+ <IconStyle> <Icon> <href>../ikgeo/res/wm.png</href> </Icon></IconStyle>
+</Style> 
 <Document id="root_doc">
 <Schema name="Top10NL_gebouw_pt_windturbine" id="Top10NL_gebouw_pt_windturbine">
 	<SimpleField name="ogc_fid" type="float"></SimpleField>
@@ -30,6 +33,7 @@
 <Folder><name>Top10NL_gebouw_pt_windturbine</name>
   <Placemark>
 	<ExtendedData><SchemaData schemaUrl="#Top10NL_gebouw_pt_windturbine">
+		<styleUrl> #My_Style</styleUrl> 
 		<SimpleData name="ogc_fid">1</SimpleData>
 		<SimpleData name="gml_id">nl.top10nl.122661497</SimpleData>
 		<SimpleData name="namespace">NL.TOP10NL</SimpleData>
