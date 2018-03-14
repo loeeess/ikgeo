@@ -32,7 +32,7 @@ function initMap(){
 		};
 		
 		var windmolenLayer = new google.maps.KmlLayer({
-			url: "https://loeeess.github.io/ikgeo/data/windmolens.kml", 
+			url: "https://loeeess.github.io/ikgeo/data/windmolens.kmz", 
 				map: map
 				
 			});
