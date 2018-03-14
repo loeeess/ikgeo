@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
-<Style id="My_Style">
- <IconStyle> <Icon> <href>../ikgeo/res/wm.png</href> </Icon></IconStyle>
-</Style> 
 <Document id="root_doc">
+  <Style id="windmolen">
+      <IconStyle>
+        <Icon>
+          <href>https://loeeess.github.io/ikgeo/res/wm.png</href>
+        </Icon>
+      </IconStyle>
+   </Style>
 <Schema name="Top10NL_gebouw_pt_windturbine" id="Top10NL_gebouw_pt_windturbine">
 	<SimpleField name="ogc_fid" type="float"></SimpleField>
 	<SimpleField name="gml_id" type="string"></SimpleField>
@@ -33,7 +37,7 @@
 <Folder><name>Top10NL_gebouw_pt_windturbine</name>
   <Placemark>
 	<ExtendedData><SchemaData schemaUrl="#Top10NL_gebouw_pt_windturbine">
-		<styleUrl> #My_Style</styleUrl> 
+			
 		<SimpleData name="ogc_fid">1</SimpleData>
 		<SimpleData name="gml_id">nl.top10nl.122661497</SimpleData>
 		<SimpleData name="namespace">NL.TOP10NL</SimpleData>
@@ -51,6 +55,8 @@
 		<SimpleData name="hoogtenive">0</SimpleData>
 		<SimpleData name="status">in gebruik</SimpleData>
 	</SchemaData></ExtendedData>
+
+	<styleURL>#windmolen</styleURL>
       <Point><coordinates>6.79871339478315,53.4492169465495</coordinates></Point>
   </Placemark>
   <Placemark>
@@ -72,6 +78,7 @@
 		<SimpleData name="hoogtenive">0</SimpleData>
 		<SimpleData name="status">in gebruik</SimpleData>
 	</SchemaData></ExtendedData>
+	<styleURL>#windmolen</styleURL>
       <Point><coordinates>6.7796589272776,53.4501636067165</coordinates></Point>
   </Placemark>
   <Placemark>
@@ -135,6 +142,7 @@
 		<SimpleData name="hoogtenive">0</SimpleData>
 		<SimpleData name="status">in gebruik</SimpleData>
 	</SchemaData></ExtendedData>
+	<styleURL>#windmolen</styleURL>
       <Point><coordinates>6.78985204750062,53.4521329241653</coordinates></Point>
   </Placemark>
   <Placemark>
@@ -303,6 +311,7 @@
 		<SimpleData name="hoogtenive">0</SimpleData>
 		<SimpleData name="status">in gebruik</SimpleData>
 	</SchemaData></ExtendedData>
+	<styleURL>#windmolen</styleURL>
       <Point><coordinates>5.55485377729001,52.522816081654</coordinates></Point>
   </Placemark>
   <Placemark>
