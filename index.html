@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link rel="icon" href="../ikgeo/res/wm icon.ico">
 		<title>Impact van Windmolens</title>
 		
 		<meta charset="UTF-8" />
@@ -8,10 +9,18 @@
 		<link rel="stylesheet" type="text/css" href="map.css" />
 
 		<div class="topbar">
-			<h1>De Impact van Windmolens</h1>
-				<div id="zoekbalk">
-					<input id="pac-input" class="controls" type="text" placeholder="Zoeken">
-				</div>	  			
+			<h1 onclick="openNav()">&#9776;</h1>
+			<h1>De Impact van Windmolens</h1>	  			
+		</div>
+
+		<div id="zoekbalk">
+			<input id="pac-input" class="controls" type="text" placeholder="Zoeken">
+		</div>
+
+		  <div id="sidenavi" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href="#"></a>
+			<a onclick="closeNav()">Toon windmolens</a>
 		  </div>
 		
 		<script src="key.js"></script>
