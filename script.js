@@ -7,26 +7,13 @@ window.onload = function()
 	document.getElementsByTagName('head')[0].appendChild(script);
 }
 
-/* Set the width of the side navigation to 250px */
-function openNav() {
-	document.getElementById("sidenavi").style.width = "250px"
-}
 
-/* Set the width of the side navigation to 0 */
-function closeNav() {
-	document.getElementById("sidenavi").style.width = "0";
-}
 
 function initMap(){
 
-	//Oefenen locaties met infowindow
-	var locations = [
-		['Leiden', 52.1674, 4.4713, 4],
-		['The Hague', 52.0705, 4.3007, 5],
-		['Groningen', 53.2194, 6.5665, 3],
-		['Amsterdam', 52.3702, 4.8952, 2],
-		['Maastricht', 50.8514, 5.6910, 1]
-	  ];
+		
+
+
   
 	var map = new google.maps.Map(document.getElementById('map'), {
 	zoom: 7,
@@ -35,29 +22,6 @@ function initMap(){
 	});
 
 	var infowindow = new google.maps.InfoWindow();
-		
-	//Laag die de windmolens in Nederland toont
-	var windmolenLayer = new google.maps.KmlLayer({
-		url: "https://loeeess.github.io/ikgeo/data/windmolens.kmz", 
-		map: map
-	});
-		
-	//Oefenen met markers in een loop
-	var marker, i;
-
-	for (i = 0; i < locations.length; i++) { 
-		marker = new google.maps.Marker({
-			position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-			map: map
-		});
-		
-		google.maps.event.addListener(marker, 'click', (function(marker, i) {
-			return function() {
-			infowindow.setContent(locations[i][0]);
-			infowindow.open(map, marker);
-			}
-		})(marker, i));
-	}
 
 	//zoekbalk
 	var input = document.getElementById('pac-input');
@@ -107,5 +71,32 @@ function initMap(){
 		});
 	map.fitBounds(bounds);
 	});
+
+	var windmolenLayer = new google.maps.KmlLayer({
+		url: "https://loeeess.github.io/ikgeo/data/windmolens.kmz",
+		map: map
+	});
+	
+		document.getElementById("windturbines").addEventListener('click', function(){
+		if(windmolenLayer.getMap()==null){
+			document.getElementById("windturbines").style.backgroundColor = "grey"
+			windmolenLayer.setMap(map);
+			console.info('set map', map);
+		}else if(windmolenLayer.getMap()!=null){
+			document.getElementById("windturbines").style.backgroundColor = "black"
+			windmolenLayer.setMap(null);
+			console.info('remove map');
+		}
+	});	
     		
+}
+
+//Open sidenav menu
+function openNav() {
+	document.getElementById("sidenavi").style.width = "250px"
+}
+
+//Sluit sidenav menu
+function closeNav() {
+	document.getElementById("sidenavi").style.width = "0";
 }
