@@ -68,25 +68,70 @@ function initMap(){
 	map.fitBounds(bounds);
 	});
 
-	map.data.loadGeoJson("https://loeeess.github.io/ikgeo/data/geojson.json");
+	//Laag die co2 van 2015 toont
+	var co2fifteen = new google.maps.Data();
+	co2fifteen.loadGeoJson("https://loeeess.github.io/ikgeo/data/CO2-2015.json");
 
+
+	document.getElementById("co2fifteen").addEventListener('click', function(){
+		if(co2fifteen.getMap()==null){
+			document.getElementById("co2fifteen").style.backgroundColor = "grey"
+			co2fifteen.setMap(map);
+			console.info('set map', map);
+		}else if(co2fifteen.getMap()!=null){
+			document.getElementById("co2fifteen").style.backgroundColor = "black"
+			co2fifteen.setMap(null);
+			console.info('remove map');
+		}});	
+
+	co2fifteen.setStyle(function(feature) {
+		var color = getColor(feature.getProperty('uitstoot'));
+		
+		return /** @type {google.maps.Data.StyleOptions} */({
+			fillColor: color,
+			strokeWeight: 2,
+			fillOpacity: 0.75
+		});
+  });
+
+	
+
+	//Laag die windmolens toont
 	var windmolenLayer = new google.maps.KmlLayer({
 		url: "https://loeeess.github.io/ikgeo/data/windmolens.kmz",
 		map: map
 	});
+	windmolenLayer.setMap(null);
 	
 		document.getElementById("windturbines").addEventListener('click', function(){
 		if(windmolenLayer.getMap()==null){
-			document.getElementById("windturbines").style.backgroundColor = "grey"
+			document.getElementById("windturbines").style.backgroundColor = "grey";
 			windmolenLayer.setMap(map);
 			console.info('set map', map);
 		}else if(windmolenLayer.getMap()!=null){
-			document.getElementById("windturbines").style.backgroundColor = "black"
+			document.getElementById("windturbines").style.backgroundColor = "black";
 			windmolenLayer.setMap(null);
 			console.info('remove map');
-		}
-	});	
+		}});	
+
     		
+}
+
+function getColor(uitstoot) {
+	var colors = [
+		'#65ff00',
+		'#ddff00',
+		'##ffdd00',
+		'#ff8300',
+		'#ff0000'
+	];
+
+	return uitstoot >= 30000000 ? colors[4] :
+		uitstoot > 25000000 ? colors[4] :
+		uitstoot > 20000000 ? colors[3] :
+		uitstoot > 15000000 ? colors[2] :
+		uitstoot > 10000000 ? colors[1] :
+		colors[0];
 }
 
 //Open sidenav menu
@@ -97,4 +142,27 @@ function openNav() {
 //Sluit sidenav menu
 function closeNav() {
 	document.getElementById("sidenavi").style.width = "0";
+}
+
+//Open dropdown menu
+function dropdownMenu() {
+	document.getElementById("dropdownid").classList.toggle("show");
+	document.getElementById("year").style.backgroundColor = "grey";
+}
+
+//Sluit dropdown menu
+window.onclick = function(event) {
+if (!event.target.matches('.dropbutton')) {
+		
+	var dropdowns = document.getElementsByClassName("dropdown-content");
+	var i;
+	for (i = 0; i < dropdowns.length; i++) {
+		document.getElementById("year").style.backgroundColor = "black";
+		var openDropdown = dropdowns[i];
+		if (openDropdown.classList.contains('show')) {
+			openDropdown.classList.remove('show');
+			
+		}
+	}
+}
 }
