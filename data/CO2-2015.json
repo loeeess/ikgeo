@@ -905,6 +905,7 @@
       "properties": {
         "name": "Drenthe",
         "regioFacetId": "tcm:106-353397-1024",
+        "uitstoot": 3695612,
         "level": 3
       }
     },
@@ -1380,6 +1381,7 @@
       "properties": {
         "name": "Flevoland",
         "regioFacetId": "tcm:106-353410-1024",
+        "uitstoot": 2762277,
         "level": 3
       }
     },
@@ -2061,8 +2063,9 @@
         ]
       },
       "properties": {
-        "name": "Friesland (Fryslân)",
+        "name": "Friesland",
         "regioFacetId": "tcm:106-353417-1024",
+        "uitstoot": 4567006,
         "level": 3
       }
     },
@@ -4490,6 +4493,7 @@
       "properties": {
         "name": "Gelderland",
         "regioFacetId": "tcm:106-353445-1024",
+        "uitstoot": 15237409,
         "level": 3
       }
     },
@@ -5197,6 +5201,7 @@
       "properties": {
         "name": "Groningen",
         "regioFacetId": "tcm:106-353502-1024",
+        "uitstoot": 6347682,
         "level": 3
       }
     },
@@ -7080,6 +7085,7 @@
       "properties": {
         "name": "Limburg",
         "regioFacetId": "tcm:106-353526-1024",
+        "uitstoot": 12105359,
         "level": 3
       }
     },
@@ -9167,6 +9173,7 @@
       "properties": {
         "name": "Noord-Brabant",
         "regioFacetId": "tcm:106-353560-1024",
+        "uitstoot": 21226266,
         "level": 3
       }
     },
@@ -9942,6 +9949,7 @@
       "properties": {
         "name": "Noord-Holland",
         "regioFacetId": "tcm:106-353628-1024",
+        "uitstoot": 19674415,
         "level": 3
       }
     },
@@ -11697,6 +11705,7 @@
       "properties": {
         "name": "Overijssel",
         "regioFacetId": "tcm:106-353682-1024",
+        "uitstoot": 7772262,
         "level": 3
       }
     },
@@ -12948,6 +12957,7 @@
       "properties": {
         "name": "Utrecht",
         "regioFacetId": "tcm:106-353708-1024",
+        "uitstoot": 7702810,
         "level": 3
       }
     },
@@ -13627,6 +13637,7 @@
       "properties": {
         "name": "Zeeland",
         "regioFacetId": "tcm:106-353735-1024",
+        "uitstoot": 9041153,
         "level": 3
       }
     },
@@ -14514,6 +14525,7 @@
       "properties": {
         "name": "Zuid-Holland",
         "regioFacetId": "tcm:106-353749-1024",
+        "uitstoot": 32301162,
         "level": 3
       }
     }

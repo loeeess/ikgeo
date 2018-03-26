@@ -10,11 +10,7 @@ window.onload = function()
 
 
 function initMap(){
-
-		
-
-
-  
+	 
 	var map = new google.maps.Map(document.getElementById('map'), {
 	zoom: 7,
 	center: new google.maps.LatLng(52.1326, 5.2913),
@@ -71,6 +67,8 @@ function initMap(){
 		});
 	map.fitBounds(bounds);
 	});
+
+	map.data.loadGeoJson("https://loeeess.github.io/ikgeo/data/geojson.json");
 
 	var windmolenLayer = new google.maps.KmlLayer({
 		url: "https://loeeess.github.io/ikgeo/data/windmolens.kmz",

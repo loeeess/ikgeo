@@ -28,6 +28,10 @@ padding: -2%;
     overflow: hidden;
 }
 
+#windturbines{
+    background-color: grey;
+}
+
 .sidenav {
     height: 100%;
     width: 0; 
@@ -51,7 +55,7 @@ padding: -2%;
 }
 
 .sidenav a:hover {
-    color: #4E629D;
+    color: rgb(35, 61, 139);
 }
 
 .sidenav .closebtn {
