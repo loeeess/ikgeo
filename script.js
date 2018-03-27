@@ -69,23 +69,23 @@ function initMap(){
 	});
 
 	//Laag die co2 van 2015 toont
-	var co2fifteen = new google.maps.Data();
-	co2fifteen.loadGeoJson("https://loeeess.github.io/ikgeo/data/CO2-2015.json");
-
+	var co2 = new google.maps.Data();
+	co2.loadGeoJson("https://loeeess.github.io/ikgeo/data/CO2-2015.json");
+	co2.setMap(map);
 
 	document.getElementById("co2fifteen").addEventListener('click', function(){
-		if(co2fifteen.getMap()==null){
+		if(co2.getMap()==null){
 			document.getElementById("co2fifteen").style.backgroundColor = "grey"
-			co2fifteen.setMap(map);
+			co2.setMap(map);
 			console.info('set map', map);
-		}else if(co2fifteen.getMap()!=null){
+		}else if(co2.getMap()!=null){
 			document.getElementById("co2fifteen").style.backgroundColor = "black"
-			co2fifteen.setMap(null);
+			co2.setMap(null);
 			console.info('remove map');
 		}});	
 
-	co2fifteen.setStyle(function(feature) {
-		var color = getColor(feature.getProperty('uitstoot'));
+	co2.setStyle(function(feature) {
+		var color = getColor(feature.getProperty('uitstootfifteen'));
 		
 		return /** @type {google.maps.Data.StyleOptions} */({
 			fillColor: color,
@@ -95,7 +95,6 @@ function initMap(){
   });
 
 	
-
 	//Laag die windmolens toont
 	var windmolenLayer = new google.maps.KmlLayer({
 		url: "https://loeeess.github.io/ikgeo/data/windmolens.kmz",
