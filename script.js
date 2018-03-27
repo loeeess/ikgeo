@@ -8,7 +8,6 @@ window.onload = function()
 }
 
 function initMap(){
-	 
 	var map = new google.maps.Map(document.getElementById('map'), {
 	zoom: 7,
 	center: new google.maps.LatLng(52.1326, 5.2913),
@@ -69,65 +68,47 @@ function initMap(){
 	var co2 = new google.maps.Data();
 	co2.loadGeoJson("https://loeeess.github.io/ikgeo/data/CO2-uitstoot.json");
 
+	co2.setStyle(function(feature) {
+		var color = getColor(feature.getProperty('uitstootfourteen'));
+		return /** @type {google.maps.Data.StyleOptions} */({
+			fillColor: color,
+			strokeWeight: 1,
+			fillOpacity: 0.75
+		});
+	});
+
 	//Toggle 2013
 	document.getElementById("co2thirteen").addEventListener('click', function(){
 		if(co2.getMap()==null){
-			co2.setStyle(function(feature) {
-				var color = getColor(feature.getProperty('uitstootthirteen'));
-				
-				return /** @type {google.maps.Data.StyleOptions} */({
-					fillColor: color,
-					strokeWeight: 2,
-					fillOpacity: 0.75
-				});
-			});
-			document.getElementById("co2thirteen").style.backgroundColor = "grey";
+			document.getElementById("co2thirteen").style.backgroundColor = "#233d8b";
 			co2.setMap(map);
 			console.info('set map', map);
 		}else if(co2.getMap()!=null){
-			document.getElementById("co2thirteen").style.backgroundColor = "black";
+			document.getElementById("co2thirteen").style.backgroundColor = "grey";
 			co2.setMap(null);
 			console.info('remove map');
 		}});
 
-		//Toggle 2014
-		document.getElementById("co2fourteen").addEventListener('click', function(){
-			if(co2.getMap()==null){
-				co2.setStyle(function(feature) {
-					var color = getColor(feature.getProperty('uitstootfourteen'));
-					
-					return /** @type {google.maps.Data.StyleOptions} */({
-						fillColor: color,
-						strokeWeight: 2,
-						fillOpacity: 0.75
-					});
-				});
-				document.getElementById("co2fourteen").style.backgroundColor = "grey";
-				co2.setMap(map);
-				console.info('set map', map);
-			}else if(co2.getMap()!=null){
-				document.getElementById("co2fourteen").style.backgroundColor = "black";
-				co2.setMap(null);
-				console.info('remove map');
-			}});
-
-			//Toggle 2015
-	document.getElementById("co2fifteen").addEventListener('click', function(){
+	//Toggle 2014
+	document.getElementById("co2fourteen").addEventListener('click', function(){
 		if(co2.getMap()==null){
-			co2.setStyle(function(feature) {
-				var color = getColor(feature.getProperty('uitstootfifteen'));
-				
-				return /** @type {google.maps.Data.StyleOptions} */({
-					fillColor: color,
-					strokeWeight: 2,
-					fillOpacity: 0.75
-				});
-			});
-			document.getElementById("co2fifteen").style.backgroundColor = "grey";
+			document.getElementById("co2fourteen").style.backgroundColor = "#233d8b";
 			co2.setMap(map);
 			console.info('set map', map);
 		}else if(co2.getMap()!=null){
-			document.getElementById("co2fifteen").style.backgroundColor = "black";
+			document.getElementById("co2fourteen").style.backgroundColor = "grey";
+			co2.setMap(null);
+			console.info('remove map');
+		}});
+
+	//Toggle 2015
+	document.getElementById("co2fifteen").addEventListener('click', function(){
+		if(co2.getMap()==null){
+			document.getElementById("co2fifteen").style.backgroundColor = "#233d8b";
+			co2.setMap(map);
+			console.info('set map', map);
+		}else if(co2.getMap()!=null){
+			document.getElementById("co2fifteen").style.backgroundColor = "grey";
 			co2.setMap(null);
 			console.info('remove map');
 		}});
@@ -135,10 +116,7 @@ function initMap(){
 	//Laag die windmolens toont
 	var windmolenLayer = new google.maps.KmlLayer({
 		url: "https://loeeess.github.io/ikgeo/data/windmolens.kmz",
-		map: map
 	});
-	windmolenLayer.setMap(null);
-	
 		document.getElementById("windturbines").addEventListener('click', function(){
 		if(windmolenLayer.getMap()==null){
 			document.getElementById("windturbines").style.backgroundColor = "grey";
@@ -151,15 +129,14 @@ function initMap(){
 		}});		
 }
 
-
 function getColor(uitstoot) {
 	var colors = [
-		'#ffffff',
-		'#6bff5e',
-		'#ffe647',
-		'#ffae51',
-		'#ffae59',
-		'#ff5151'
+		'#ffffff', //Wit
+		'#68ff51', //Groen
+		'#fff651', //Geel
+		'#ffbc51', //Oranjegeel
+		'#ff7951', //Oranje
+		'#ff5151' //Rood
 	];
 
 	return uitstoot >= 25000000 ? colors[5] :
@@ -181,22 +158,21 @@ function closeNav() {
 	document.getElementById("sidenavi").style.width = "0";
 }
 
-
-//Open dropdown menu
+//Open dropdown menu voor 2013
 function dropdownMenu13() {
 	document.getElementById("dropdownid13").classList.toggle("show");
 	document.getElementById("2013").style.backgroundColor = "grey";
 	document.getElementById("production13").style.backgroundColor = "grey";
 }
 
-//Open dropdown menu
+//Open dropdown menu voor 2014
 function dropdownMenu14() {
 	document.getElementById("dropdownid14").classList.toggle("show");
 	document.getElementById("2014").style.backgroundColor = "grey";
 	document.getElementById("production14").style.backgroundColor = "grey";
 }
 
-//Open dropdown menu
+//Open dropdown menu voor 2015
 function dropdownMenu15() {
 	document.getElementById("dropdownid15").classList.toggle("show");
 	document.getElementById("2015").style.backgroundColor = "grey";
@@ -208,16 +184,13 @@ window.onclick = function(event) {
 if (!event.target.matches('.dropbutton')) {
 	document.getElementById("2013").style.backgroundColor = "black";
 	document.getElementById("2014").style.backgroundColor = "black";
-  document.getElementById("2015").style.backgroundColor = "black";
+  	document.getElementById("2015").style.backgroundColor = "black";
 	var dropdowns = document.getElementsByClassName("dropdown-content");
 	var i;
 	for (i = 0; i < dropdowns.length; i++) {
 		var openDropdown = dropdowns[i];
 		if (openDropdown.classList.contains('show')) {
-			
 			openDropdown.classList.remove('show');
-			
-			
 		}
 	}
 }
