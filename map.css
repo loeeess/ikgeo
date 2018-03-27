@@ -70,10 +70,6 @@ padding: -2%;
     padding: 20px;
 }
 
-@media screen and (max-height: 600px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-}
 
 
 .dropbutton:hover, .dropbutton:focus {
@@ -107,3 +103,8 @@ padding: -2%;
 }
 
 .show {display:block;}
+
+@media screen and (max-height: 600px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
