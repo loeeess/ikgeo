@@ -70,19 +70,8 @@ function initMap(){
 
 	//Laag die co2 van 2015 toont
 	var co2 = new google.maps.Data();
-	co2.loadGeoJson("https://loeeess.github.io/ikgeo/data/CO2-2015.json");
-	co2.setMap(map);
-
-	document.getElementById("co2fifteen").addEventListener('click', function(){
-		if(co2.getMap()==null){
-			document.getElementById("co2fifteen").style.backgroundColor = "grey"
-			co2.setMap(map);
-			console.info('set map', map);
-		}else if(co2.getMap()!=null){
-			document.getElementById("co2fifteen").style.backgroundColor = "black"
-			co2.setMap(null);
-			console.info('remove map');
-		}});	
+	co2.loadGeoJson("https://loeeess.github.io/ikgeo/data/CO2-uitstoot.json");
+	
 
 	co2.setStyle(function(feature) {
 		var color = getColor(feature.getProperty('uitstootfifteen'));
@@ -94,7 +83,7 @@ function initMap(){
 		});
   });
 
-	
+	co2.setMap(map);
 	//Laag die windmolens toont
 	var windmolenLayer = new google.maps.KmlLayer({
 		url: "https://loeeess.github.io/ikgeo/data/windmolens.kmz",
@@ -141,6 +130,17 @@ function openNav() {
 //Sluit sidenav menu
 function closeNav() {
 	document.getElementById("sidenavi").style.width = "0";
+}
+
+function openDropThirteen(){
+dropdownMenu()
+	var color = getColor(feature.getProperty('uitstootthirteen'));
+		
+		return /** @type {google.maps.Data.StyleOptions} */({
+			fillColor: color,
+			strokeWeight: 2,
+			fillOpacity: 0.75
+		});
 }
 
 //Open dropdown menu
