@@ -68,20 +68,19 @@ function initMap(){
 	var co2 = new google.maps.Data();
 	co2.loadGeoJson("https://loeeess.github.io/ikgeo/data/CO2-uitstoot.json");
 
-	co2.setStyle(function(feature) {
-		var color = getColor(feature.getProperty('uitstootfourteen'));
-		return /** @type {google.maps.Data.StyleOptions} */({
-			fillColor: color,
-			strokeWeight: 1,
-			fillOpacity: 0.75
-		});
-	});
-
 	//Toggle 2013
 	document.getElementById("co2thirteen").addEventListener('click', function(){
 		if(co2.getMap()==null){
 			document.getElementById("co2thirteen").style.backgroundColor = "#233d8b";
 			co2.setMap(map);
+			co2.setStyle(function(feature) {
+				var color = getColor(feature.getProperty('uitstootthirteen'));
+				return /** @type {google.maps.Data.StyleOptions} */({
+					fillColor: color,
+					strokeWeight: 1,
+					fillOpacity: 0.75
+				});
+			});
 			console.info('set map', map);
 		}else if(co2.getMap()!=null){
 			document.getElementById("co2thirteen").style.backgroundColor = "grey";
@@ -94,6 +93,14 @@ function initMap(){
 		if(co2.getMap()==null){
 			document.getElementById("co2fourteen").style.backgroundColor = "#233d8b";
 			co2.setMap(map);
+			co2.setStyle(function(feature) {
+				var color = getColor(feature.getProperty('uitstootfourteen'));
+				return /** @type {google.maps.Data.StyleOptions} */({
+					fillColor: color,
+					strokeWeight: 1,
+					fillOpacity: 0.75
+				});
+			});
 			console.info('set map', map);
 		}else if(co2.getMap()!=null){
 			document.getElementById("co2fourteen").style.backgroundColor = "grey";
@@ -106,6 +113,14 @@ function initMap(){
 		if(co2.getMap()==null){
 			document.getElementById("co2fifteen").style.backgroundColor = "#233d8b";
 			co2.setMap(map);
+			co2.setStyle(function(feature) {
+				var color = getColor(feature.getProperty('uitstootfifteen'));
+				return /** @type {google.maps.Data.StyleOptions} */({
+					fillColor: color,
+					strokeWeight: 1,
+					fillOpacity: 0.75
+				});
+			});
 			console.info('set map', map);
 		}else if(co2.getMap()!=null){
 			document.getElementById("co2fifteen").style.backgroundColor = "grey";
@@ -150,7 +165,7 @@ function getColor(uitstoot) {
 
 //Open sidenav menu
 function openNav() {
-	document.getElementById("sidenavi").style.width = "250px"
+	document.getElementById("sidenavi").style.width = "20%"
 }
 
 //Sluit sidenav menu
