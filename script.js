@@ -135,10 +135,12 @@ function initMap(){
 		document.getElementById("production13").addEventListener('click', function(){
 		if(productionthirteenLayer.getMap()==null){
 			document.getElementById("production13").style.backgroundColor = "grey";
+			document.getElementById("legenda").style.zIndex = "1";
 			productionthirteenLayer.setMap(map);
 			console.info('set map', map);
 		}else if(productionthirteenLayer.getMap()!=null){
 			document.getElementById("production13").style.backgroundColor = "black";
+			document.getElementById("legenda").style.zIndex = "0";
 			productionthirteenLayer.setMap(null);
 			console.info('remove map');
 		}});
@@ -150,10 +152,12 @@ function initMap(){
 			document.getElementById("production14").addEventListener('click', function(){
 			if(productionfourteenLayer.getMap()==null){
 				document.getElementById("production14").style.backgroundColor = "grey";
+				document.getElementById("legenda").style.zIndex = "1";
 				productionfourteenLayer.setMap(map);
 				console.info('set map', map);
 			}else if(productionfourteenLayer.getMap()!=null){
 				document.getElementById("production14").style.backgroundColor = "black";
+				document.getElementById("legenda").style.zIndex = "0";
 				productionfourteenLayer.setMap(null);
 				console.info('remove map');
 			}});
@@ -165,10 +169,12 @@ function initMap(){
 			document.getElementById("production15").addEventListener('click', function(){
 			if(productionfifteenLayer.getMap()==null){
 				document.getElementById("production15").style.backgroundColor = "grey";
+				document.getElementById("legenda").style.zIndex = "1";
 				productionfifteenLayer.setMap(map);
 				console.info('set map', map);
 			}else if(productionfifteenLayer.getMap()!=null){
 				document.getElementById("production15").style.backgroundColor = "black";
+				document.getElementById("legenda").style.zIndex = "0";
 				productionfifteenLayer.setMap(null);
 				console.info('remove map');
 			}});
