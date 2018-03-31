@@ -147,7 +147,7 @@ function initMap(){
 
 	//Laag die de windproductie 2014 toont
 	var productionfourteenLayer = new google.maps.KmlLayer({
-		url: "https://loeeess.github.io/ikgeo/data/2014productie.kmz",
+		url: "https://loeeess.github.io/ikgeo/data/2014.kmz",
 		});
 			document.getElementById("production14").addEventListener('click', function(){
 			if(productionfourteenLayer.getMap()==null){
