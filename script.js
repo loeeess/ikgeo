@@ -130,7 +130,7 @@ function initMap(){
 
 	//Laag die de windproductie 2013 toont
 	var productionthirteenLayer = new google.maps.KmlLayer({
-	url: "https://loeeess.github.io/ikgeo/data/2013.kmz",
+	url: "https://loeeess.github.io/ikgeo/data/productie-2013.kmz",
 	});
 		document.getElementById("production13").addEventListener('click', function(){
 		if(productionthirteenLayer.getMap()==null){
@@ -141,7 +141,22 @@ function initMap(){
 			document.getElementById("production13").style.backgroundColor = "black";
 			productionthirteenLayer.setMap(null);
 			console.info('remove map');
-		}});		
+		}});
+		
+	//Laag die de windproductie 2015 toont
+	var productionfifteenLayer = new google.maps.KmlLayer({
+		url: "https://loeeess.github.io/ikgeo/data/productie-2015.kmz",
+		});
+			document.getElementById("production15").addEventListener('click', function(){
+			if(productionfifteenLayer.getMap()==null){
+				document.getElementById("production15").style.backgroundColor = "grey";
+				productionfifteenLayer.setMap(map);
+				console.info('set map', map);
+			}else if(productionfifteenLayer.getMap()!=null){
+				document.getElementById("production15").style.backgroundColor = "black";
+				productionfifteenLayer.setMap(null);
+				console.info('remove map');
+			}});
 
 	
 	//Laag die windmolens toont
