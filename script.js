@@ -127,6 +127,22 @@ function initMap(){
 			co2.setMap(null);
 			console.info('remove map');
 		}});
+
+	//Laag die de windproductie 2013 toont
+	var productionthirteenLayer = new google.maps.KmlLayer({
+	url: "https://loeeess.github.io/ikgeo/data/productie-2013.kml",
+	});
+		document.getElementById("production13").addEventListener('click', function(){
+		if(productionthirteenLayer.getMap()==null){
+			document.getElementById("production13").style.backgroundColor = "grey";
+			productionthirteenLayer.setMap(map);
+			console.info('set map', map);
+		}else if(productionthirteenLayer.getMap()!=null){
+			document.getElementById("production13").style.backgroundColor = "black";
+			productionthirteenLayer.setMap(null);
+			console.info('remove map');
+		}});		
+
 	
 	//Laag die windmolens toont
 	var windmolenLayer = new google.maps.KmlLayer({

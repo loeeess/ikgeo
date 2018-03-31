@@ -30,6 +30,18 @@ padding: -2%;
     overflow: hidden;
 }
 
+
+.legenda {
+    height: 150px;
+    width: 150px; 
+    position: fixed; 
+    z-index: 1; 
+    right: 5%;
+    bottom: 5%;
+    background-color: black;
+    overflow-x: hidden;  
+}
+
 .sidenav {
     height: 100%;
     width: 0; 
