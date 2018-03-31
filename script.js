@@ -72,6 +72,7 @@ function initMap(){
 	document.getElementById("co2thirteen").addEventListener('click', function(){
 		if(co2.getMap()==null){
 			document.getElementById("co2thirteen").style.backgroundColor = "#233d8b";
+			document.getElementById("legendaco2").style.zIndex = "1";
 			co2.setMap(map);
 			co2.setStyle(function(feature) {
 				var color = getColor(feature.getProperty('uitstootthirteen'));
@@ -84,6 +85,7 @@ function initMap(){
 			console.info('set map', map);
 		}else if(co2.getMap()!=null){
 			document.getElementById("co2thirteen").style.backgroundColor = "grey";
+			document.getElementById("legendaco2").style.zIndex = "0";
 			co2.setMap(null);
 			console.info('remove map');
 		}});
@@ -92,6 +94,7 @@ function initMap(){
 	document.getElementById("co2fourteen").addEventListener('click', function(){
 		if(co2.getMap()==null){
 			document.getElementById("co2fourteen").style.backgroundColor = "#233d8b";
+			document.getElementById("legendaco2").style.zIndex = "1";
 			co2.setMap(map);
 			co2.setStyle(function(feature) {
 				var color = getColor(feature.getProperty('uitstootfourteen'));
@@ -104,6 +107,7 @@ function initMap(){
 			console.info('set map', map);
 		}else if(co2.getMap()!=null){
 			document.getElementById("co2fourteen").style.backgroundColor = "grey";
+			document.getElementById("legendaco2").style.zIndex = "0";
 			co2.setMap(null);
 			console.info('remove map');
 		}});
@@ -112,6 +116,7 @@ function initMap(){
 	document.getElementById("co2fifteen").addEventListener('click', function(){
 		if(co2.getMap()==null){
 			document.getElementById("co2fifteen").style.backgroundColor = "#233d8b";
+			document.getElementById("legendaco2").style.zIndex = "1";
 			co2.setMap(map);
 			co2.setStyle(function(feature) {
 				var color = getColor(feature.getProperty('uitstootfifteen'));
@@ -124,6 +129,7 @@ function initMap(){
 			console.info('set map', map);
 		}else if(co2.getMap()!=null){
 			document.getElementById("co2fifteen").style.backgroundColor = "grey";
+			document.getElementById("legendaco2").style.zIndex = "0";
 			co2.setMap(null);
 			console.info('remove map');
 		}});
@@ -134,13 +140,13 @@ function initMap(){
 	});
 		document.getElementById("production13").addEventListener('click', function(){
 		if(productionthirteenLayer.getMap()==null){
-			document.getElementById("production13").style.backgroundColor = "grey";
-			document.getElementById("legenda").style.zIndex = "1";
+			document.getElementById("production13").style.backgroundColor = "#233d8b";
+			document.getElementById("legendaproduction").style.zIndex = "1";
 			productionthirteenLayer.setMap(map);
 			console.info('set map', map);
 		}else if(productionthirteenLayer.getMap()!=null){
-			document.getElementById("production13").style.backgroundColor = "black";
-			document.getElementById("legenda").style.zIndex = "0";
+			document.getElementById("production13").style.backgroundColor = "grey";
+			document.getElementById("legendaproduction").style.zIndex = "0";
 			productionthirteenLayer.setMap(null);
 			console.info('remove map');
 		}});
@@ -151,13 +157,13 @@ function initMap(){
 		});
 			document.getElementById("production14").addEventListener('click', function(){
 			if(productionfourteenLayer.getMap()==null){
-				document.getElementById("production14").style.backgroundColor = "grey";
-				document.getElementById("legenda").style.zIndex = "1";
+				document.getElementById("production14").style.backgroundColor = "#233d8b";
+				document.getElementById("legendaproduction").style.zIndex = "1";
 				productionfourteenLayer.setMap(map);
 				console.info('set map', map);
 			}else if(productionfourteenLayer.getMap()!=null){
-				document.getElementById("production14").style.backgroundColor = "black";
-				document.getElementById("legenda").style.zIndex = "0";
+				document.getElementById("production14").style.backgroundColor = "grey";
+				document.getElementById("legendaproduction").style.zIndex = "0";
 				productionfourteenLayer.setMap(null);
 				console.info('remove map');
 			}});
@@ -168,13 +174,13 @@ function initMap(){
 		});
 			document.getElementById("production15").addEventListener('click', function(){
 			if(productionfifteenLayer.getMap()==null){
-				document.getElementById("production15").style.backgroundColor = "grey";
-				document.getElementById("legenda").style.zIndex = "1";
+				document.getElementById("production15").style.backgroundColor = "#233d8b";
+				document.getElementById("legendaproduction").style.zIndex = "1";
 				productionfifteenLayer.setMap(map);
 				console.info('set map', map);
 			}else if(productionfifteenLayer.getMap()!=null){
-				document.getElementById("production15").style.backgroundColor = "black";
-				document.getElementById("legenda").style.zIndex = "0";
+				document.getElementById("production15").style.backgroundColor = "grey";
+				document.getElementById("legendaproduction").style.zIndex = "0";
 				productionfifteenLayer.setMap(null);
 				console.info('remove map');
 			}});
@@ -217,7 +223,7 @@ function getColor(uitstoot) {
 
 //Open sidenav menu
 function openNav() {
-	document.getElementById("sidenavi").style.width = "20%"
+	document.getElementById("sidenavi").style.width = "250px"
 }
 
 //Sluit sidenav menu
