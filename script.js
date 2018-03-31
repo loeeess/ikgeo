@@ -142,6 +142,22 @@ function initMap(){
 			productionthirteenLayer.setMap(null);
 			console.info('remove map');
 		}});
+
+	//Laag die de windproductie 2014 toont
+	var productionfourteenLayer = new google.maps.KmlLayer({
+		url: "https://loeeess.github.io/ikgeo/data/2014.kmz",
+		});
+			document.getElementById("production14").addEventListener('click', function(){
+			if(productionfourteenLayer.getMap()==null){
+				document.getElementById("production14").style.backgroundColor = "grey";
+				productionfourteenLayer.setMap(map);
+				console.info('set map', map);
+			}else if(productionfourtenLayer.getMap()!=null){
+				document.getElementById("production14").style.backgroundColor = "black";
+				productionfourteenLayer.setMap(null);
+				console.info('remove map');
+			}});
+			
 		
 	//Laag die de windproductie 2015 toont
 	var productionfifteenLayer = new google.maps.KmlLayer({
