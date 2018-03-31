@@ -161,7 +161,7 @@ function initMap(){
 		
 	//Laag die de windproductie 2015 toont
 	var productionfifteenLayer = new google.maps.KmlLayer({
-		url: "https://loeeess.github.io/ikgeo/data/productie-2015.kmz",
+		url: "https://loeeess.github.io/ikgeo/data/2015.kmz",
 		});
 			document.getElementById("production15").addEventListener('click', function(){
 			if(productionfifteenLayer.getMap()==null){
