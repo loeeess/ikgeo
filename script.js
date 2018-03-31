@@ -157,7 +157,6 @@ function initMap(){
 				productionfourteenLayer.setMap(null);
 				console.info('remove map');
 			}});
-			
 		
 	//Laag die de windproductie 2015 toont
 	var productionfifteenLayer = new google.maps.KmlLayer({
