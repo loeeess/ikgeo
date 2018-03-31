@@ -130,7 +130,7 @@ function initMap(){
 
 	//Laag die de windproductie 2013 toont
 	var productionthirteenLayer = new google.maps.KmlLayer({
-	url: "https://loeeess.github.io/ikgeo/data/productie-2013.kmz",
+	url: "https://loeeess.github.io/ikgeo/data/2013.kmz",
 	});
 		document.getElementById("production13").addEventListener('click', function(){
 		if(productionthirteenLayer.getMap()==null){
@@ -152,7 +152,7 @@ function initMap(){
 				document.getElementById("production14").style.backgroundColor = "grey";
 				productionfourteenLayer.setMap(map);
 				console.info('set map', map);
-			}else if(productionfourtenLayer.getMap()!=null){
+			}else if(productionfourteenLayer.getMap()!=null){
 				document.getElementById("production14").style.backgroundColor = "black";
 				productionfourteenLayer.setMap(null);
 				console.info('remove map');
