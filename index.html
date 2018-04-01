@@ -8,6 +8,14 @@
 		
 		<link rel="stylesheet" type="text/css" href="map.css" />
 
+		<div id="info" >
+			<p id="cross" onclick="closeInfo()">✖</p>
+			<h1>Over dit project</h1>
+			<p id="textblock">text</p>
+
+			<h1>Conclusie</h1>
+		</div>
+
 		<div class="topbar">
 			<h1 onclick="openNav()">&#9776;</h1>
 			<h1>De Impact van Windmolens</h1>	  			
@@ -62,7 +70,7 @@
 			</div>
 					
 			<a id ="windturbines">Toon windmolens</a>
-
+			<a id ="infobar" onclick="openInfo()">Info</a>
 		  </div>
 
 		<script src="key.js"></script>

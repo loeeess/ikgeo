@@ -189,6 +189,7 @@ function initMap(){
 	//Laag die windmolens toont
 	var windmolenLayer = new google.maps.KmlLayer({
 		url: "https://loeeess.github.io/ikgeo/data/windmolens.kmz",
+		map: map
 	});
 		document.getElementById("windturbines").addEventListener('click', function(){
 		if(windmolenLayer.getMap()==null){
@@ -219,6 +220,17 @@ function getColor(uitstoot) {
 		uitstoot > 2000000 ? colors[1] :
 		uitstoot = 0 ? colors[0] :
 		colors[0];
+}
+
+//Open infoscherm
+function openInfo() {
+	document.getElementById("info").style.zIndex = "1";
+	document.getElementById("sidenavi").style.width = "0";
+}
+
+//Sluit infoscherm
+function closeInfo() {
+	document.getElementById("info").style.zIndex = "0";
 }
 
 //Open sidenav menu
@@ -264,7 +276,7 @@ if (!event.target.matches('.dropbutton')) {
 		var openDropdown = dropdowns[i];
 		if (openDropdown.classList.contains('show')) {
 			openDropdown.classList.remove('show');
+			}
 		}
 	}
-}
 }
