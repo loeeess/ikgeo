@@ -74,6 +74,19 @@ function initMap(){
 			document.getElementById("co2thirteen").style.backgroundColor = "#233d8b";
 			document.getElementById("legendaco2").style.zIndex = "1";
 			co2.setMap(map);
+			co2.addListener('mouseover', function(e) {
+				infoWindow.setContent(
+					e.feature.getProperty('name') + '<br> Uitstoot in tonnen: ' +
+					e.feature.getProperty('uitstootthirteen') + '</div>');
+					
+					var anchor = new google.maps.MVCObject();
+					anchor.set("position", e.latLng);
+					infoWindow.open(map, anchor);
+			});
+
+			co2.addListener('mouseout', function() {
+				infoWindow.close();
+			});
 			co2.setStyle(function(feature) {
 				var color = getColor(feature.getProperty('uitstootthirteen'));
 				return /** @type {google.maps.Data.StyleOptions} */({
@@ -90,12 +103,31 @@ function initMap(){
 			console.info('remove map');
 		}});
 
+	var infoWindow = new google.maps.InfoWindow({
+			content: ""
+	});
+
 	//Toggle 2014
 	document.getElementById("co2fourteen").addEventListener('click', function(){
 		if(co2.getMap()==null){
 			document.getElementById("co2fourteen").style.backgroundColor = "#233d8b";
 			document.getElementById("legendaco2").style.zIndex = "1";
 			co2.setMap(map);
+
+			co2.addListener('mouseover', function(e) {
+				infoWindow.setContent(
+				 	e.feature.getProperty('name') + '<br> Uitstoot in tonnen: ' +
+				  	e.feature.getProperty('uitstootfourteen') + '</div>');
+					
+					var anchor = new google.maps.MVCObject();
+					anchor.set("position", e.latLng);
+					infoWindow.open(map, anchor);
+			});
+
+			co2.addListener('mouseout', function() {
+				infoWindow.close();
+			});
+			
 			co2.setStyle(function(feature) {
 				var color = getColor(feature.getProperty('uitstootfourteen'));
 				return /** @type {google.maps.Data.StyleOptions} */({
@@ -118,6 +150,20 @@ function initMap(){
 			document.getElementById("co2fifteen").style.backgroundColor = "#233d8b";
 			document.getElementById("legendaco2").style.zIndex = "1";
 			co2.setMap(map);
+
+			co2.addListener('mouseover', function(e) {
+				infoWindow.setContent(
+					e.feature.getProperty('name') + '<br> Uitstoot in tonnen: ' +
+					e.feature.getProperty('uitstootfifteen') + '</div>');
+						
+					var anchor = new google.maps.MVCObject();
+					anchor.set("position", e.latLng);
+					infoWindow.open(map, anchor);
+			});
+
+			co2.addListener('mouseout', function() {
+				infoWindow.close();
+			});
 			co2.setStyle(function(feature) {
 				var color = getColor(feature.getProperty('uitstootfifteen'));
 				return /** @type {google.maps.Data.StyleOptions} */({
@@ -225,6 +271,8 @@ function getColor(uitstoot) {
 //Open infoscherm
 function openInfo() {
 	document.getElementById("info").style.zIndex = "1";
+	document.getElementById("info").style.width = '100%';
+	document.getElementById("info").style.height = '91%';
 	document.getElementById("sidenavi").style.width = "0";
 }
 

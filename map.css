@@ -37,8 +37,6 @@ padding: -2%;
     margin-top: -10px;
 }
 #info {
-    width: 100%;
-    height: 91%;
     bottom: 0;
     background-color: white;
     position: fixed;
@@ -90,8 +88,6 @@ padding: -2%;
     padding: 20px;
 }
 
-
-
 .dropbutton:hover, .dropbutton:focus {
     color: rgb(35, 61, 139);
 }
@@ -127,6 +123,8 @@ padding: -2%;
 @media screen and (max-height: 600px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+    .topbar {height: 7%;}
+    #map {height: 93%;}
 }
 
 p {
