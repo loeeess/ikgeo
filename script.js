@@ -1,3 +1,6 @@
+//IKGEO
+// Loes Crama
+// s1101632
 window.onload = function()
 {
 	var script = document.createElement('script');
@@ -14,8 +17,6 @@ function initMap(){
 	mapTypeId: google.maps.MapTypeId.SATELLITE
 	});
 
-	var infowindow = new google.maps.InfoWindow();
-
 	//zoekbalk
 	var input = document.getElementById('pac-input');
       var searchBox = new google.maps.places.SearchBox(input);
@@ -23,7 +24,7 @@ function initMap(){
 
 	map.addListener('bounds_changed', function() {
     searchBox.setBounds(map.getBounds());
-  });
+  	});
 
 	var markers = [];
   //Suggesties met plaatsen invoeren
@@ -248,6 +249,7 @@ function initMap(){
 		}});		
 }
 
+//Tonen kleuren in json van provincies
 function getColor(uitstoot) {
 	var colors = [
 		'#ffffff', //Wit
