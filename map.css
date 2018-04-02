@@ -55,12 +55,10 @@ table, th, td {
     text-align: left;
 }
 
-
 #info {
     bottom: 0;
     background-color: white;
     position: fixed;
-    overflow: scroll;
     display: block;
 }
 
@@ -142,13 +140,6 @@ table, th, td {
 
 .show {display:block;}
 
-@media screen and (max-height: 600px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-    .topbar {height: 7%;}
-    #map {height: 93%;}
-}
-
 p {
     line-height: 1;
 }
@@ -218,4 +209,10 @@ p {
 
 #red{
     background-color: #ff5151;
+}
+
+@media screen and (max-height: 700px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    h1 {font-size: 20px;}
 }
