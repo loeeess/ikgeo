@@ -55,7 +55,6 @@ function initMap(){
       }));
 
     if (place.geometry.viewport) {
-    // Only geocodes have viewport.
       bounds.union(place.geometry.viewport);
     	} else {
       bounds.extend(place.geometry.location);
@@ -274,6 +273,7 @@ function openInfo() {
 	document.getElementById("info").style.width = '100%';
 	document.getElementById("info").style.height = '91%';
 	document.getElementById("sidenavi").style.width = "0";
+	document.getElementById("info").style.display = "inline";
 }
 
 //Sluit infoscherm

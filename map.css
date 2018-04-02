@@ -19,10 +19,16 @@ height: 91%;
 
 h1
 {
-font-size: 26px;
+font-size: 22px;
 display: inline-block;
-margin: 1%;
-padding: -2%;
+margin-left: 2%;
+}
+
+h2 {
+    font-size: 26px;
+    display: inline-block;
+    margin: 15px;
+    padding: -2%;
 }
 
 .topbar {
@@ -33,13 +39,29 @@ padding: -2%;
 }
 
 #textblock {
-    margin-left: 15px;
+    margin-left: 2%;
+    margin-right: 5%;
     margin-top: -10px;
+    font-size: 14px;
+    line-height: 1.2;
 }
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    font-size: 14px;
+    text-align: left;
+}
+
+
 #info {
     bottom: 0;
     background-color: white;
     position: fixed;
+    overflow: scroll;
+    display: block;
 }
 
 #cross {
